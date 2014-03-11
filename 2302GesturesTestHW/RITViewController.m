@@ -19,7 +19,6 @@
 {
     [super viewDidLoad];
     
-    
     // tap gesture
     UITapGestureRecognizer* tapGesture =
     [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -32,7 +31,6 @@
     [super viewDidAppear:animated];
     
     NSURL* path = [[NSBundle mainBundle] URLForResource:@"Totoro" withExtension:@"gif"];
-    //NSString* stringPath = [path absoluteString];
     NSData* data = [NSData dataWithContentsOfURL:path];
     UIImage* image = [UIImage animatedImageWithAnimatedGIFData:data];
     self.gif.image = image;
