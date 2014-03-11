@@ -7,6 +7,7 @@
 //
 
 #import "RITViewController.h"
+#import "UIImageAnimatedGIF.h"
 
 @interface RITViewController ()
 
@@ -20,10 +21,16 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    NSURL* path = [[NSBundle mainBundle] URLForResource:@"Totoro" withExtension:@"gif"];
+    //NSString* stringPath = [path absoluteString];
+    NSData* data = [NSData dataWithContentsOfURL:path];
+    UIImage* image = [UIImage animatedImageWithAnimatedGIFData:data];
+    self.gif.image = image;
+    
 }
 
 @end
